@@ -50,7 +50,7 @@ post请求
 
 上传文件
     #open函数不能打开含有中文路径的文件
-    ${filePath}=    Set Variable    "/home/software/jenkins/github-plugin-configuration.xml"
+    ${filePath}=    Set Variable    "${JENKINS_HOME}/github-plugin-configuration.xml"
     #先转换编码格式    unicode(inpath , "utf8")
     ${upath}    Evaluate    unicode(${filePath},'utf8')
     ${file}    Evaluate    open(unicode(${filePath},'utf8') ,"rb")
